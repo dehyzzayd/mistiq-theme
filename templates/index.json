@@ -17,7 +17,7 @@
         "body": "Steam-activated aromatherapy pods that clip onto your showerhead. Drop one in, turn on the water. 15 pods, 30-45 showers.",
         "cta_text": "Shop the Starter Ritual",
         "cta_link": "/collections/all",
-        "sub_text": "From €24.99"
+        "sub_text": "From $24.99"
       }
     },
     "value-props": {
@@ -52,7 +52,7 @@
           "settings": {
             "icon_label": "Ships",
             "title": "Free shipping",
-            "body": "On orders over €40. Worldwide. Tracking included."
+            "body": "On orders over $35. US & Canada. Tracking included."
           }
         }
       },
@@ -120,7 +120,7 @@
         "pt3": {
           "type": "point",
           "settings": {
-            "text": "Reusable holder included. Refill packs from €24.99."
+            "text": "Reusable holder included. Refill packs from $34.99."
           }
         }
       },
