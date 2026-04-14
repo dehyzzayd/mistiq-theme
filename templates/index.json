@@ -190,6 +190,14 @@
     "testimonials": {
       "type": "testimonials",
       "blocks": {
+        "quote_YqfhLg": {
+          "type": "quote",
+          "settings": {
+            "quote": "",
+            "name": "",
+            "city": ""
+          }
+        },
         "q1": {
           "type": "quote",
           "settings": {
@@ -216,6 +224,7 @@
         }
       },
       "block_order": [
+        "quote_YqfhLg",
         "q1",
         "q2",
         "q3"
@@ -230,7 +239,7 @@
       "type": "final-cta",
       "settings": {
         "heading": "The last unoptimized 8 minutes of your morning. Fixed.",
-        "body": "Free shipping over €40. 30-day happiness guarantee.",
+        "body": "Free shipping over $35. 30-day happiness guarantee.",
         "primary_text": "Shop the Starter Ritual",
         "primary_link": "",
         "secondary_text": "View all products",
