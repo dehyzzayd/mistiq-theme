@@ -1,0 +1,45 @@
+<section style="padding:80px 0;">
+  <div class="sec" style="padding-top:0;padding-bottom:0;margin-bottom:0;">
+    <p class="sec-label">{{ section.settings.label }}</p>
+    <h2 class="sec-title" style="margin-bottom:40px;">{{ section.settings.heading }}</h2>
+  </div>
+  <div style="max-width:var(--max-w);margin:0 auto;padding:0 24px;">
+    <div class="scent-row">
+      {%- for block in section.blocks -%}
+        <div class="scent-item" {{ block.shopify_attributes }}>
+          <p class="scent-name">{{ block.settings.name }}</p>
+          <p class="scent-desc">{{ block.settings.description }}</p>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Scent Profiles",
+  "settings": [
+    { "type": "text", "id": "label", "label": "Label", "default": "4 intentions" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Choose your scent." }
+  ],
+  "blocks": [
+    {
+      "type": "scent",
+      "name": "Scent",
+      "settings": [
+        { "type": "text", "id": "name", "label": "Name" },
+        { "type": "richtext", "id": "description", "label": "Description" }
+      ]
+    }
+  ],
+  "presets": [{
+    "name": "Scent Profiles",
+    "blocks": [
+      { "type": "scent", "settings": { "name": "SHARPEN", "description": "<p>Eucalyptus cuts through the fog — not the room's, <strong>yours.</strong></p>" }},
+      { "type": "scent", "settings": { "name": "SOFTEN", "description": "<p>Lavender reminds your shoulders they're not <strong>load-bearing walls.</strong></p>" }},
+      { "type": "scent", "settings": { "name": "IGNITE", "description": "<p>Citrus doesn't whisper. It <strong>announces.</strong></p>" }},
+      { "type": "scent", "settings": { "name": "GROUND", "description": "<p>Mint settles in the chest first, <strong>then the mind.</strong></p>" }}
+    ]
+  }]
+}
+{% endschema %}

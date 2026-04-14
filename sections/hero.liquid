@@ -1,0 +1,67 @@
+<section class="hero-wrap">
+  <div class="hero-bg">
+    {%- if section.settings.image != blank -%}
+      <img src="{{ section.settings.image | image_url: width: 2400 }}" alt="" loading="eager" width="2400" height="1600">
+    {%- else -%}
+      <img src="{{ 'hero-sky.jpg' | asset_url }}" alt="" loading="eager" width="2400" height="1600">
+    {%- endif -%}
+  </div>
+  <div class="hero-overlay-t"></div>
+  <div class="hero-overlay-l"></div>
+  <div class="hero-content">
+    <p class="hero-label">{{ section.settings.label }}</p>
+    <h1 class="hero-title">{{ section.settings.heading }}</h1>
+    <p class="hero-body">{{ section.settings.body }}</p>
+    <a href="{{ section.settings.cta_link }}" class="hero-pill">{{ section.settings.cta_text }}</a>
+    <p class="hero-sub">{{ section.settings.sub_text }}</p>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Background image"
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label",
+      "default": "Shower Aromatherapy"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "default": "The 8 minutes you never optimized."
+    },
+    {
+      "type": "textarea",
+      "id": "body",
+      "label": "Body text",
+      "default": "Steam-activated aromatherapy pods that clip onto your showerhead. Drop one in, turn on the water. 15 pods, 30-45 showers."
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Button text",
+      "default": "Shop the Starter Ritual"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "Button link"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "sub_text",
+      "label": "Sub text",
+      "default": "From €24.99"
+    }
+  ],
+  "presets": [{ "name": "Hero" }]
+}
+{% endschema %}

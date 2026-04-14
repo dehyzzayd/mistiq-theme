@@ -1,0 +1,6 @@
+{
+  "general": {
+    "cart": { "title": "Cart", "empty": "Your cart is empty." },
+    "404": { "title": "Page not found" }
+  }
+}

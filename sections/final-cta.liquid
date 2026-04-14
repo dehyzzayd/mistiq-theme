@@ -1,0 +1,27 @@
+<section class="fcta">
+  <h2>{{ section.settings.heading }}</h2>
+  <p>{{ section.settings.body }}</p>
+  <div class="fcta-btns">
+    {%- if section.settings.primary_link != blank -%}
+      <a href="{{ section.settings.primary_link }}" class="fcta-pri">{{ section.settings.primary_text }}</a>
+    {%- endif -%}
+    {%- if section.settings.secondary_link != blank -%}
+      <a href="{{ section.settings.secondary_link }}" class="fcta-sec">{{ section.settings.secondary_text }}</a>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Final CTA",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "The last unoptimized 8 minutes of your morning. Fixed." },
+    { "type": "text", "id": "body", "label": "Body", "default": "Free shipping over €40. 30-day happiness guarantee." },
+    { "type": "text", "id": "primary_text", "label": "Primary button text", "default": "Shop the Starter Ritual" },
+    { "type": "url", "id": "primary_link", "label": "Primary button link" },
+    { "type": "text", "id": "secondary_text", "label": "Secondary button text", "default": "View all products" },
+    { "type": "url", "id": "secondary_link", "label": "Secondary button link" }
+  ],
+  "presets": [{ "name": "Final CTA" }]
+}
+{% endschema %}

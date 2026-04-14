@@ -1,0 +1,52 @@
+<section style="background:#fff;padding:80px 0;border-top:1px solid var(--gray-border);">
+  <div class="sec" style="padding-top:0;padding-bottom:0;">
+    <div class="sec-hdr">
+      <div>
+        <p class="sec-label">{{ section.settings.label }}</p>
+        <h2 class="sec-title">{{ section.settings.heading }}</h2>
+      </div>
+      <p style="font-size:13px;color:var(--gray);">{{ section.settings.rating_text }}</p>
+    </div>
+  </div>
+  <div style="max-width:var(--max-w);margin:0 auto;padding:0 24px;">
+    <div class="tgrid">
+      {%- for block in section.blocks -%}
+        <div class="tcard" {{ block.shopify_attributes }}>
+          <p class="tcard-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+          <p class="tcard-q">"{{ block.settings.quote }}"</p>
+          <p class="tcard-a">{{ block.settings.name }} <span>{{ block.settings.city }}</span></p>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Testimonials",
+  "settings": [
+    { "type": "text", "id": "label", "label": "Label", "default": "Customer stories" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "The shower never called you back. We did." },
+    { "type": "text", "id": "rating_text", "label": "Rating text", "default": "4.9 · 127 reviews" }
+  ],
+  "blocks": [
+    {
+      "type": "quote",
+      "name": "Quote",
+      "settings": [
+        { "type": "textarea", "id": "quote", "label": "Quote" },
+        { "type": "text", "id": "name", "label": "Name" },
+        { "type": "text", "id": "city", "label": "City" }
+      ]
+    }
+  ],
+  "presets": [{
+    "name": "Testimonials",
+    "blocks": [
+      { "type": "quote", "settings": { "quote": "I didn't know my shower was missing something until it wasn't.", "name": "Amara", "city": "London" }},
+      { "type": "quote", "settings": { "quote": "MISTIQ lasts three showers and I forget it's there — until I smell it.", "name": "Jonas", "city": "Berlin" }},
+      { "type": "quote", "settings": { "quote": "My therapist asked what changed. I said my shower.", "name": "Priya", "city": "Toronto" }}
+    ]
+  }]
+}
+{% endschema %}

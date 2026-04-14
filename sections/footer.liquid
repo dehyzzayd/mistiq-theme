@@ -1,0 +1,29 @@
+<footer class="ftr">
+  <a href="/" class="ftr-logo">{{ shop.name }}</a>
+  <nav class="ftr-nav">
+    {%- for link in linklists[section.settings.menu].links -%}
+      <a href="{{ link.url }}">{{ link.title }}</a>
+    {%- endfor -%}
+  </nav>
+  <p class="ftr-tag">{{ section.settings.tagline }}</p>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu",
+      "default": "footer"
+    },
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Tagline",
+      "default": "Built for the 8 minutes that belong only to you."
+    }
+  ]
+}
+{% endschema %}

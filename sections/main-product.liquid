@@ -1,0 +1,99 @@
+<div class="pp">
+  <div class="pp-grid">
+    <div class="pp-gallery">
+      <div class="pp-main">
+        {%- if product.featured_image != blank -%}
+          <img src="{{ product.featured_image | image_url: width: 900 }}" alt="{{ product.title }}" width="900" height="900">
+        {%- endif -%}
+      </div>
+    </div>
+    <div>
+      {%- if product.metafields.reviews.rating -%}
+        <p style="font-size:12px;color:var(--gray-light);margin-bottom:6px;">&#9733;&#9733;&#9733;&#9733;&#9733; {{ product.metafields.reviews.rating.value }} reviews</p>
+      {%- endif -%}
+      <p class="pp-label">{{ product.type | default: 'MISTIQ' }}</p>
+      <h1 class="pp-title">{{ product.title }}</h1>
+      <p class="pp-sub">{{ product.metafields.custom.subtitle | default: product.description | strip_html | truncate: 80 }}</p>
+
+      <div style="margin-bottom:4px;">
+        <span class="pp-price">{{ product.price | money }}</span>
+        {%- if product.compare_at_price > product.price -%}
+          <span class="pp-cmp">{{ product.compare_at_price | money }}</span>
+          <span class="pp-save">SAVE {{ product.compare_at_price | minus: product.price | times: 100 | divided_by: product.compare_at_price }}%</span>
+        {%- endif -%}
+      </div>
+      <p class="pp-note">{{ section.settings.note }}</p>
+
+      <form action="/cart/add" method="post">
+        {%- if product.variants.size > 1 -%}
+          <div style="margin-bottom:20px;">
+            <p style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;">{{ product.options.first }}</p>
+            <div class="pp-opts">
+              {%- for variant in product.variants -%}
+                <label class="pp-opt{% if forloop.first %} active{% endif %}" data-variant="{{ variant.id }}">
+                  <input type="radio" name="id" value="{{ variant.id }}" style="display:none;" {% if forloop.first %}checked{% endif %}>
+                  {{ variant.title }}
+                </label>
+              {%- endfor -%}
+            </div>
+          </div>
+        {%- else -%}
+          <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+        {%- endif -%}
+
+        <div class="pp-qty">
+          <span class="pp-qty-l">Qty</span>
+          <div class="pp-qty-c">
+            <button type="button" class="pp-qty-b" data-a="m">&minus;</button>
+            <span class="pp-qty-v">1</span>
+            <button type="button" class="pp-qty-b" data-a="p">+</button>
+          </div>
+        </div>
+        <input type="hidden" name="quantity" value="1">
+
+        <button type="submit" class="pp-atc">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 6V5a3 3 0 016 0v1M3 6h14l-1 11H4L3 6z"/></svg>
+          Add to Cart — {{ product.price | money }}
+        </button>
+      </form>
+
+      <div class="pp-trust">
+        <span class="pp-trust-i">Free shipping over &euro;40</span>
+        <span class="pp-trust-i">30-day guarantee</span>
+        <span class="pp-trust-i">Secure checkout</span>
+      </div>
+
+      <div class="oc">
+        <div class="oc-sec">
+          <div class="oc-row"><div class="oc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><span class="oc-lbl">Ships worldwide</span></div>
+          <p class="oc-det">Free over &euro;40. Tracking included.</p>
+        </div>
+        <div class="oc-sec">
+          <div class="oc-row"><div class="oc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div><span class="oc-lbl">Secure payment</span></div>
+          <p class="oc-det">Visa, Mastercard, Apple Pay, Google Pay</p>
+        </div>
+        <div class="oc-sec">
+          <div class="oc-row"><div class="oc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div><span class="oc-lbl">Order total</span></div>
+          <div class="oc-line"><span class="l">{{ product.title }} &times; 1</span><span class="r">{{ product.price | money }}</span></div>
+          <div class="oc-line"><span class="l">Shipping</span><span class="r" style="color:var(--green);font-weight:600;">Free</span></div>
+          <div class="oc-total"><span class="l">Total</span><span class="r">{{ product.price | money }}</span></div>
+        </div>
+      </div>
+
+      {%- if product.description != blank -%}
+        <div class="pp-desc">
+          <div class="pp-desc-body">{{ product.description }}</div>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Product Page",
+  "settings": [
+    { "type": "text", "id": "note", "label": "Note below price", "default": "Each pod lasts 2-3 showers. Drop, steam, breathe." }
+  ]
+}
+{% endschema %}

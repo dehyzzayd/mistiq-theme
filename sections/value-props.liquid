@@ -1,0 +1,40 @@
+<section style="background:#fff;padding:64px 0;border-top:1px solid var(--gray-border);border-bottom:1px solid var(--gray-border);">
+  <div style="max-width:var(--max-w);margin:0 auto;padding:0 24px;">
+    <div class="vp-grid">
+      {%- for block in section.blocks -%}
+        <div {{ block.shopify_attributes }}>
+          <p class="vp-icon">{{ block.settings.icon_label }}</p>
+          <p class="vp-h">{{ block.settings.title }}</p>
+          <p class="vp-p">{{ block.settings.body }}</p>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Value Props",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "prop",
+      "name": "Prop",
+      "settings": [
+        { "type": "text", "id": "icon_label", "label": "Icon label", "default": "Feature" },
+        { "type": "text", "id": "title", "label": "Title", "default": "Value proposition" },
+        { "type": "textarea", "id": "body", "label": "Body" }
+      ]
+    }
+  ],
+  "presets": [{
+    "name": "Value Props",
+    "blocks": [
+      { "type": "prop", "settings": { "icon_label": "Setup", "title": "3-second setup", "body": "Clip the holder to your showerhead arm. No tools, no plumbing." }},
+      { "type": "prop", "settings": { "icon_label": "Clean", "title": "No mess", "body": "Unlike steamers — no slippery residue, no crumbling, no waste." }},
+      { "type": "prop", "settings": { "icon_label": "Lasts", "title": "2-3 showers per pod", "body": "15 pods = 30-45 showers. Over a month of mornings." }},
+      { "type": "prop", "settings": { "icon_label": "Ships", "title": "Free shipping", "body": "On orders over €40. Worldwide. Tracking included." }}
+    ]
+  }]
+}
+{% endschema %}

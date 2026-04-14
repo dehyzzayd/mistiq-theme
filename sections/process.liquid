@@ -1,0 +1,46 @@
+<section style="background:#fff;padding:80px 0;">
+  <div class="sec" style="padding-top:0;padding-bottom:0;margin-bottom:40px;">
+    <p class="sec-label">{{ section.settings.label }}</p>
+    <h2 class="sec-title">{{ section.settings.heading }}</h2>
+  </div>
+  <div style="max-width:var(--max-w);margin:0 auto;padding:0 24px;">
+    <div class="proc-grid">
+      {%- for block in section.blocks -%}
+        <div class="proc-step" {{ block.shopify_attributes }}>
+          <p class="proc-num">STEP {{ block.settings.number }}</p>
+          <p class="proc-h">{{ block.settings.title }}</p>
+          <p class="proc-p">{{ block.settings.body }}</p>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Process",
+  "settings": [
+    { "type": "text", "id": "label", "label": "Label", "default": "How it works" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "From box to ritual, in three steps." }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        { "type": "text", "id": "number", "label": "Number", "default": "01" },
+        { "type": "text", "id": "title", "label": "Title" },
+        { "type": "textarea", "id": "body", "label": "Body" }
+      ]
+    }
+  ],
+  "presets": [{
+    "name": "Process",
+    "blocks": [
+      { "type": "step", "settings": { "number": "01", "title": "Clip the holder", "body": "Chrome-finish silicone clip attaches to any standard showerhead arm." }},
+      { "type": "step", "settings": { "number": "02", "title": "Drop in a pod", "body": "Eucalyptus to sharpen, lavender to soften, citrus to ignite, mint to ground." }},
+      { "type": "step", "settings": { "number": "03", "title": "Turn on the water", "body": "Steam activates the essential oils. Each pod lasts 2-3 showers." }}
+    ]
+  }]
+}
+{% endschema %}

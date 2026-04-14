@@ -1,0 +1,33 @@
+<div class="page-hdr"><h1>Your cart</h1></div>
+<div style="max-width:640px;margin:0 auto;padding:0 24px 80px;">
+  {%- if cart.item_count > 0 -%}
+    {%- for item in cart.items -%}
+      <div style="display:flex;gap:20px;padding:20px 0;border-bottom:1px solid var(--gray-border);">
+        <a href="{{ item.url }}" style="flex-shrink:0;width:80px;height:80px;background:var(--gray-bg);overflow:hidden;">
+          {%- if item.image != blank -%}<img src="{{ item.image | image_url: width: 160 }}" alt="{{ item.title }}" style="width:100%;height:100%;object-fit:cover;">{%- endif -%}
+        </a>
+        <div style="flex:1;">
+          <a href="{{ item.url }}" style="font-weight:600;font-size:15px;">{{ item.product.title }}</a>
+          {%- if item.variant.title != 'Default Title' -%}<p style="font-size:13px;color:var(--gray);margin-top:2px;">{{ item.variant.title }}</p>{%- endif -%}
+          <p style="font-weight:700;margin-top:6px;">{{ item.final_line_price | money }}</p>
+        </div>
+      </div>
+    {%- endfor -%}
+    <div style="padding-top:20px;text-align:right;">
+      <p style="font-size:18px;font-weight:800;margin-bottom:16px;">Total: {{ cart.total_price | money }}</p>
+      <a href="/checkout" style="display:inline-flex;padding:14px 32px;background:var(--black);color:#fff;font-size:14px;font-weight:700;">Checkout</a>
+    </div>
+  {%- else -%}
+    <div class="cart-empty">
+      <p>Your cart is empty.</p>
+      <a href="/collections/all" style="display:inline-flex;padding:12px 24px;background:var(--black);color:#fff;font-size:14px;font-weight:600;">Shop Now</a>
+    </div>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Cart",
+  "settings": []
+}
+{% endschema %}
