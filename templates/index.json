@@ -12,12 +12,12 @@
     "hero": {
       "type": "hero",
       "settings": {
-        "label": "Shower Aromatherapy",
-        "heading": "The 8 minutes you never optimized.",
-        "body": "Steam-activated aromatherapy pods that clip onto your showerhead. Drop one in, turn on the water. 15 pods, 30-45 showers.",
-        "cta_text": "Shop the Starter Ritual",
+        "label": "Aromatherapy, Elevated",
+        "heading": "Turn every moment into a ritual.",
+        "body": "Shower pods, shower steamers, bath bombs, and essential oils — 100% natural aromatherapy made for your everyday.",
+        "cta_text": "Shop the Collection",
         "cta_link": "/collections/all",
-        "sub_text": "From $24.99"
+        "sub_text": "From $19.99 · Free US shipping over $35"
       }
     },
     "value-props": {
@@ -26,9 +26,9 @@
         "p1": {
           "type": "prop",
           "settings": {
-            "icon_label": "Setup",
-            "title": "3-second setup",
-            "body": "Clip the holder to your showerhead arm. No tools, no plumbing."
+            "icon_label": "Easy",
+            "title": "Zero effort",
+            "body": "Drop, dissolve, or diffuse. Every MISTIQ product is ritual-ready from the first use."
           }
         },
         "p2": {
@@ -36,15 +36,15 @@
           "settings": {
             "icon_label": "Clean",
             "title": "No mess",
-            "body": "Unlike steamers — no slippery residue, no crumbling, no waste."
+            "body": "Clean formulas, minimal recyclable packaging — no residue, no waste."
           }
         },
         "p3": {
           "type": "prop",
           "settings": {
-            "icon_label": "Lasts",
-            "title": "2-3 showers per pod",
-            "body": "15 pods = 30-45 showers. Over a month of mornings."
+            "icon_label": "Pure",
+            "title": "100% natural",
+            "body": "Real essential oils, biodegradable binders, no synthetic fragrances."
           }
         },
         "p4": {
@@ -71,24 +71,24 @@
           "type": "step",
           "settings": {
             "number": "01",
-            "title": "Clip the holder",
-            "body": "Chrome-finish silicone clip attaches to any standard showerhead arm."
+            "title": "Choose your ritual",
+            "body": "Shower pods, shower steamers, bath bombs, or essential oils — pick what fits your moment."
           }
         },
         "s2": {
           "type": "step",
           "settings": {
             "number": "02",
-            "title": "Drop in a pod",
-            "body": "Eucalyptus to sharpen, lavender to soften, citrus to ignite, mint to ground."
+            "title": "Activate your scent",
+            "body": "Steam, water, or air — each format releases real essential oils for instant aromatherapy."
           }
         },
         "s3": {
           "type": "step",
           "settings": {
             "number": "03",
-            "title": "Turn on the water",
-            "body": "Steam activates the essential oils. Each pod lasts 2-3 showers."
+            "title": "Breathe it in",
+            "body": "Your space transforms into a sanctuary. No mess, no fuss — just your moment."
           }
         }
       },
@@ -99,7 +99,7 @@
       ],
       "settings": {
         "label": "How it works",
-        "heading": "From box to ritual, in three steps."
+        "heading": "Your ritual, your way."
       }
     },
     "featured-product": {
