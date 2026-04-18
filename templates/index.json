@@ -108,19 +108,19 @@
         "pt1": {
           "type": "point",
           "settings": {
-            "text": "Eucalyptus, lavender, citrus, mint — all in one variety pack."
+            "text": "Eucalyptus, lavender, citrus, mint — four botanical scents in one pack."
           }
         },
         "pt2": {
           "type": "point",
           "settings": {
-            "text": "Each pod lasts 2-3 showers. No single-use waste."
+            "text": "Each pod lasts 2-3 showers — 30-45 mornings of pure aromatherapy."
           }
         },
         "pt3": {
           "type": "point",
           "settings": {
-            "text": "Reusable holder included. Refill packs from $34.99."
+            "text": "Includes reusable holder — refill from $34.99, or explore our full aromatherapy range."
           }
         }
       },
@@ -131,8 +131,8 @@
       ],
       "settings": {
         "label": "The product",
-        "heading": "See every scent. Pick on mood.",
-        "body": "Four scent intentions for your morning. You pick the one that fits your day.",
+        "heading": "Start with the Starter Ritual.",
+        "body": "The easiest way to try MISTIQ — four signature scents, one reusable holder, everything you need to begin your ritual.",
         "product": "mistiq-starter-ritual-kit-15-aromatherapy-shower-pods"
       }
     },
